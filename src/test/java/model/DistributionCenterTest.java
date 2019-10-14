@@ -26,7 +26,7 @@ class DistributionCenterTest {
         Flow flow = new Flow(distributionCenter, orders, resource);
         LocalTime startTime = LocalTime.of(14, 59, 36);
         LocalTime endTime = LocalTime.of(1, 0, 24);
-flow.print();
+
         assertEquals(flow.getStart(), startTime);
         assertEquals(flow.getEnd(), endTime);
         System.out.println("Success");
