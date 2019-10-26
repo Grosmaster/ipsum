@@ -1,19 +1,18 @@
 package model;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 import tasks.Flow;
 
 import java.time.LocalTime;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class DistributionCenterTest {
 
     private static DistributionCenter distributionCenter;
     private static Resource resource;
 
-    @BeforeAll
+    @Before
     static void setup() {
         distributionCenter = new DistributionCenter(2, 2, 1, LocalTime.of(8, 0), LocalTime.of(22, 0));
         resource = new Resource(20, 60);
@@ -27,8 +26,8 @@ class DistributionCenterTest {
         LocalTime startTime = LocalTime.of(14, 59, 36);
         LocalTime endTime = LocalTime.of(1, 0, 24);
 
-        assertEquals(flow.getStart(), startTime);
-        assertEquals(flow.getEnd(), endTime);
+        Assert.assertEquals(flow.getStart(), startTime);
+        Assert.assertEquals(flow.getEnd(), endTime);
         System.out.println("Success");
     }
 
@@ -44,8 +43,8 @@ class DistributionCenterTest {
 
         LocalTime startTime = LocalTime.of(8, 0);
         LocalTime endTime = LocalTime.of(8, 30, 1);
-        assertEquals(flow.getStart(), startTime);
-        assertEquals(flow.getEnd(), endTime);
+        Assert.assertEquals(flow.getStart(), startTime);
+        Assert.assertEquals(flow.getEnd(), endTime);
         System.out.println("Success");
     }
 
@@ -61,8 +60,8 @@ class DistributionCenterTest {
 
         LocalTime startTime = LocalTime.of(8, 29, 17);
         LocalTime endTime = LocalTime.of(10, 52,10);
-        assertEquals(flow.getStart(), startTime);
-        assertEquals(flow.getEnd(), endTime);
+        Assert.assertEquals(flow.getStart(), startTime);
+        Assert.assertEquals(flow.getEnd(), endTime);
         System.out.println("Success");
     }
 }
