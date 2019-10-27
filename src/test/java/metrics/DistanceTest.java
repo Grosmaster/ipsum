@@ -11,14 +11,14 @@ public class DistanceTest {
     private final static double longTwo = 10;
 
     @Test
-    void calculateCrowFlight(){
+    public void calculateCrowFlight(){
         double expected = 782999.6273175813;
         Assert.assertEquals(Distance.calculateCrowFlight(latOne, longOne, latTwo, longTwo), expected, 0);
     }
 
     @Test
-    void calculateOSMRapi(){
-        double expected = 1112097.1;
+    public void calculateOSMRapi(){
+        double expected = 1110205.9;
         Assert.assertEquals(Distance.calculateOSMRapi(latOne, longOne, latTwo, longTwo), expected, 0);
     }
 }
