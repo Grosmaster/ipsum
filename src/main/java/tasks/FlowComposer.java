@@ -62,6 +62,4 @@ public class FlowComposer {
         time = time.plusHours(timeTwo.getHour());
         return time;
     }
-
-
 }
