@@ -1,8 +1,8 @@
 package metrics;
 
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Assert;
+import org.junit.Test;
 
 class DistanceTest {
     private final static double latOne = 5;
@@ -13,12 +13,12 @@ class DistanceTest {
     @Test
     void calculateCrowFlight(){
         double expected = 782999.6273175813;
-        assertEquals(Distance.calculateCrowFlight(latOne, longOne, latTwo, longTwo), expected);
+        Assert.assertEquals(Distance.calculateCrowFlight(latOne, longOne, latTwo, longTwo), expected, 0);
     }
 
     @Test
     void calculateOSMRapi(){
         double expected = 1112097.1;
-        assertEquals(Distance.calculateOSMRapi(latOne, longOne, latTwo, longTwo), expected);
+        Assert.assertEquals(Distance.calculateOSMRapi(latOne, longOne, latTwo, longTwo), expected, 0);
     }
 }
