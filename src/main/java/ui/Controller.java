@@ -8,6 +8,7 @@ import model.DistributionCenter;
 import model.Order;
 import model.Resource;
 import tasks.Flow;
+import tasks.FlowComposer;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -64,7 +65,9 @@ public class Controller {
     }
 
     public void runFlowComposer(ActionEvent actionEvent) {
-        textArea.setText("ERROR");
+        FlowComposer flowComposer = new FlowComposer(distributionCenter, orders.toArray(new Order[orders.size()]), resource);
+        Flow flow = new Flow(distributionCenter, flowComposer.calculate(), resource);
+        textArea.setText(textArea.getText() + "\n\n" + flow.toString());
     }
 
     public void runSchedule(ActionEvent actionEvent) {

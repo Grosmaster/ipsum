@@ -7,19 +7,19 @@ import tasks.Flow;
 
 import java.time.LocalTime;
 
-class DistributionCenterTest {
+public class DistributionCenterTest {
 
     private static DistributionCenter distributionCenter;
     private static Resource resource;
 
     @Before
-    static void setup() {
+    public void setup() {
         distributionCenter = new DistributionCenter(2, 2, 1, LocalTime.of(8, 0), LocalTime.of(22, 0));
         resource = new Resource(20, 60);
     }
 
     @Test
-    void oneOrder() {
+    public void oneOrder() {
         Order[] orders = new Order[1];
         orders[0] = new Order(1, 2, 50, LocalTime.of(8, 0), LocalTime.of(22, 0), LocalTime.of(0, 5), LocalTime.of(0, 5));
         Flow flow = new Flow(distributionCenter, orders, resource);
@@ -28,11 +28,10 @@ class DistributionCenterTest {
 
         Assert.assertEquals(flow.getStart(), startTime);
         Assert.assertEquals(flow.getEnd(), endTime);
-        System.out.println("Success");
     }
 
     @Test
-    void threeOrders() {
+    public void threeOrders() {
         Order[] orders = new Order[3];
         orders[0] = new Order(1, 2.0001, 2.0001, LocalTime.of(8, 0), LocalTime.of(22, 0), LocalTime.of(0, 5), LocalTime.of(0, 5));
         orders[1] = new Order(1, 2.0001, 2.0002, LocalTime.of(8, 0), LocalTime.of(22, 0), LocalTime.of(0, 5), LocalTime.of(0, 5));
@@ -45,11 +44,10 @@ class DistributionCenterTest {
         LocalTime endTime = LocalTime.of(8, 30, 1);
         Assert.assertEquals(flow.getStart(), startTime);
         Assert.assertEquals(flow.getEnd(), endTime);
-        System.out.println("Success");
     }
 
     @Test
-    void threeOrdersTwo(){
+    public void threeOrdersTwo(){
         Order[] orders = new Order[3];
         orders[0] = new Order(1, 2.1, 2.1, LocalTime.of(9, 0), LocalTime.of(22, 0), LocalTime.of(0, 5), LocalTime.of(0, 5));
         orders[1] = new Order(1, 2.2, 2.2, LocalTime.of(8, 0), LocalTime.of(22, 0), LocalTime.of(0, 5), LocalTime.of(0, 5));
@@ -62,6 +60,5 @@ class DistributionCenterTest {
         LocalTime endTime = LocalTime.of(10, 52,10);
         Assert.assertEquals(flow.getStart(), startTime);
         Assert.assertEquals(flow.getEnd(), endTime);
-        System.out.println("Success");
     }
 }
