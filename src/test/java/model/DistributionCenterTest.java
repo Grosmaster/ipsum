@@ -7,7 +7,7 @@ import tasks.Flow;
 
 import java.time.LocalTime;
 
-class DistributionCenterTest {
+public class DistributionCenterTest {
 
     private static DistributionCenter distributionCenter;
     private static Resource resource;

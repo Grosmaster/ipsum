@@ -4,7 +4,7 @@ package metrics;
 import org.junit.Assert;
 import org.junit.Test;
 
-class DistanceTest {
+public class DistanceTest {
     private final static double latOne = 5;
     private final static double longOne = 5;
     private final static double latTwo = 10;
