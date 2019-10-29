@@ -33,11 +33,11 @@ public class FlowComposerTest {
     public void calculateTest() {
         Flow flow = new Flow(distributionCenter, orders, resource);
         flow.calculate();
-        long flowTime = Duration.between(flow.getStart(), flow.getEnd()).get(ChronoUnit.SECONDS);
+        long flowTime = Math.abs(Duration.between(flow.getStart(), flow.getEnd()).get(ChronoUnit.SECONDS));
         FlowComposer flowComposer = new FlowComposer(distributionCenter, orders, resource);
         flow.setOrders(flowComposer.calculate());
         flow.calculate();
-        long composerTime = Duration.between(flow.getStart(), flow.getEnd()).get(ChronoUnit.SECONDS);
+        long composerTime = Math.abs(Duration.between(flow.getStart(), flow.getEnd()).get(ChronoUnit.SECONDS));
         assertTrue(flowTime >= composerTime);
     }
 }

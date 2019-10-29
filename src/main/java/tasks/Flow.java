@@ -128,8 +128,8 @@ public class Flow {
         for (int i = 0; i < points.length; i++) {
             str.append("Point " + i + " - " + orders[i].getId() + " : "  + points[i][0].toString() + " - " + points[i][1].toString() + "\n");
         }
-        str.append("End = ").append(end.toString());
-        str.append("Time spent = ").append(Duration.between(this.start, this.end).get(ChronoUnit.SECONDS));
+        str.append("End = ").append(end.toString() + "\n");
+        str.append("Duration = ").append(LocalTime.ofSecondOfDay(Math.abs(Duration.between(this.start, this.end).get(ChronoUnit.SECONDS))));
         return str.toString();
     }
 }
