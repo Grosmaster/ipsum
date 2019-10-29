@@ -5,7 +5,9 @@ import model.DistributionCenter;
 import model.Order;
 import model.Resource;
 
+import java.time.Duration;
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 
 public class Flow {
@@ -126,7 +128,8 @@ public class Flow {
         for (int i = 0; i < points.length; i++) {
             str.append("Point " + i + " - " + orders[i].getId() + " : "  + points[i][0].toString() + " - " + points[i][1].toString() + "\n");
         }
-        str.append("End = " + end.toString());
+        str.append("End = ").append(end.toString());
+        str.append("Time spent = ").append(Duration.between(this.start, this.end).get(ChronoUnit.SECONDS));
         return str.toString();
     }
 }
