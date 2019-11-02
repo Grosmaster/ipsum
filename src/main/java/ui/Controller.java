@@ -9,6 +9,7 @@ import model.Order;
 import model.Resource;
 import tasks.Flow;
 import tasks.FlowComposer;
+import tasks.Schedule;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -71,6 +72,7 @@ public class Controller {
     }
 
     public void runSchedule(ActionEvent actionEvent) {
-        textArea.setText("ERROR");
+        Schedule schedule = new Schedule(distributionCenter, orders.toArray(new Order[orders.size()]), resource);
+        textArea.setText(textArea.getText() + "\n\n" + schedule.toString());
     }
 }
