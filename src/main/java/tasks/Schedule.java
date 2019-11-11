@@ -56,7 +56,7 @@ public class Schedule {
         LocalTime[][] points;
         boolean flagExit = true;
         for (int i = 0; i < sizeResources; i++) {
-            flowComposer = new FlowComposer(distributionCenter, resourceOrders[i].toArray(new Order[resourceOrders.length]), resource);
+            flowComposer = new FlowComposer(distributionCenter, resourceOrders[i].toArray(new Order[resourceOrders[i].size()]), resource);
             flow = new Flow(distributionCenter, flowComposer.calculate(), resource);
             while (true) {
                 if (flow.getEnd().compareTo(distributionCenter.getEndTime()) == 1 || flow.getEnd().compareTo(distributionCenter.getStartTime()) == -1) {
@@ -132,8 +132,8 @@ public class Schedule {
         FlowComposer flowComposer;
         Flow flow;
         for (int i = 0; i < resourceOrders.length; i++) {
-            str.append("Resource - " + i);
-            flowComposer = new FlowComposer(distributionCenter, resourceOrders[i].toArray(new Order[resourceOrders.length]), resource);
+            str.append("Resource - " + i + "\n");
+            flowComposer = new FlowComposer(distributionCenter, resourceOrders[i].toArray(new Order[resourceOrders[i].size()]), resource);
             flow = new Flow(distributionCenter, flowComposer.calculate(), resource);
             str.append(flow.toString() + "\n");
         }

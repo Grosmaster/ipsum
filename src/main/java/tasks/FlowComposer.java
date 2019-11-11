@@ -46,6 +46,7 @@ public class FlowComposer {
                 }
             }
             time = addTime(minTime, time);
+            //if( orders[index] == null) break;
             latitude = orders[index].getLatitude();
             longitude = orders[index].getLongitude();
             ans[i] = orders[index];
