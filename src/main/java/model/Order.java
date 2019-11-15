@@ -1,10 +1,17 @@
 package model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.Entity;
+import java.io.Serializable;
 import java.time.LocalTime;
-import java.util.Random;
 import java.util.UUID;
 
-public class Order implements Comparable {
+@Entity
+@Getter
+@Setter
+public class Order implements Comparable, Serializable {
 
     private String id;
     private int weight;
@@ -26,72 +33,11 @@ public class Order implements Comparable {
         this.id = UUID.randomUUID().toString();
     }
 
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
-
-    public LocalTime getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(LocalTime startTime) {
-        this.startTime = startTime;
-    }
-
-    public LocalTime getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(LocalTime endTime) {
-        this.endTime = endTime;
-    }
-
-    public LocalTime getShippingTime() {
-        return shippingTime;
-    }
-
-    public void setShippingTime(LocalTime shippingTime) {
-        this.shippingTime = shippingTime;
-    }
-
-    public LocalTime getDischargingTime() {
-        return dischargingTime;
-    }
-
-    public void setDischargingTime(LocalTime dischargingTime) {
-        this.dischargingTime = dischargingTime;
-    }
-
-    public String getId() {
-        return id;
-    }
-
     @Override
     public int compareTo(Object o) {
         Order order = (Order) o;
         return this.startTime.compareTo(order.getStartTime());
     }
-
 
     @Override
     public String toString() {

@@ -1,7 +1,14 @@
 package model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.Entity;
 import java.time.LocalTime;
 
+@Entity
+@Getter
+@Setter
 public class DistributionCenter {
 
     private double latitude;
@@ -15,46 +22,6 @@ public class DistributionCenter {
         this.longitude = longitude;
         this.sizeResources = sizeResources;
         this.startTime = startTime;
-        this.endTime = endTime;
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
-
-    public int getSizeResources() {
-        return sizeResources;
-    }
-
-    public void setSizeResources(int sizeResources) {
-        this.sizeResources = sizeResources;
-    }
-
-    public LocalTime getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(LocalTime startTime) {
-        this.startTime = startTime;
-    }
-
-    public LocalTime getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(LocalTime endTime) {
         this.endTime = endTime;
     }
 
