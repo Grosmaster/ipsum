@@ -1,5 +1,6 @@
 package model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,6 +12,7 @@ import java.time.LocalTime;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class DistributionCenter {
 
     private double latitude;
@@ -18,14 +20,6 @@ public class DistributionCenter {
     private int sizeResources;
     private LocalTime startTime;
     private LocalTime endTime;
-
-    public DistributionCenter(double latitude, double longitude, int sizeResources, LocalTime startTime, LocalTime endTime) {
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.sizeResources = sizeResources;
-        this.startTime = startTime;
-        this.endTime = endTime;
-    }
 
     @Override
     public String toString() {
