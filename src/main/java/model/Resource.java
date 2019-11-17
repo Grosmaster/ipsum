@@ -1,6 +1,7 @@
 package model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
@@ -8,6 +9,7 @@ import javax.persistence.Entity;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class Resource {
 
     private int capacity;
@@ -18,24 +20,8 @@ public class Resource {
         this.speed = speed;
     }
 
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
-    public double getSpeed() {
-        return speed;
-    }
-
     public double getSpeedMetersSecond() {
         return speed * 1000 / 3600;
-    }
-
-    public void setSpeed(double speed) {
-        this.speed = speed;
     }
 
     @Override
