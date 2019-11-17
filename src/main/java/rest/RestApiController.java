@@ -2,6 +2,7 @@ package rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import model.Order;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,5 +25,10 @@ public class RestApiController {
         Order order = objectMapper.readValue(jsonOrder, Order.class);
         orders.add(order);
         response.setStatus(HttpServletResponse.SC_CREATED);
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String helloWorld(){
+        return "Hello World";
     }
 }
