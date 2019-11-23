@@ -16,7 +16,6 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class RestApiController {
@@ -135,4 +134,5 @@ public class RestApiController {
     public String helloWorld() {
         return "Hello World";
     }
+
 }
